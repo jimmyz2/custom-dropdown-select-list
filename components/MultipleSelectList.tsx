@@ -370,7 +370,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                                     ?
                                         <Pressable>
                                             <View style={{flexDirection:'row', justifyContent:'space-between',alignItems:'center',paddingLeft:20}}>
-                                                <Text style={{marginRight:20,fontWeight:'600',fontFamily}}>Selected</Text>
+                                                {/* <Text style={{marginRight:20,fontWeight:'600',fontFamily}}>Selected</Text> */}
                                                 <View style={{height: 1, flex: 1, backgroundColor: 'gray'}} />
                                             </View>
                                             <View style={{flexDirection:'row',paddingHorizontal:20,marginBottom:20,flexWrap:'wrap'}}>
