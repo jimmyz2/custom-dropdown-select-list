@@ -194,7 +194,7 @@ export interface MultipleSelectListProps  {
     /**
      * Trigger an action when an option is unselected BY clicking unselect of the Badge (custom implementation).
      */
-    onUnselect?: () => void,
+    onUnselect?: (val: string) => void,
 
     /**
     * set text of label which appears soon after multiple values are selected

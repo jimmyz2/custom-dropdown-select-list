@@ -178,7 +178,9 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                                             <View key={index} style={[{backgroundColor:'gray',paddingHorizontal: 5, paddingVertical:5,borderRadius: 4,marginRight:10,marginTop:10, flexDirection: "row", justifyContent: "space-between", alignItems: "center"}, badgeStyles]}>
                                                 <Text style={[{color:'white',fontSize:12,fontFamily, marginLeft: 10}, badgeTextStyles]}>{item}</Text>
                                                 <TouchableOpacity onPress={()=> {
-                                                    // when this is pressed, call an anonymous function that calls onUnselect, but onUnselect now has a paramter passed into it and can be used!
+                                                    // when this is pressed, call onUnselect, but onUnselect now has a paramter passed into it and can be used!
+                                                    // on the client-side, onUnselect is an anonymous function (usually) that takes a parameter e.g. (val: string) => {} but now val seems to have an "implicit" value
+                                                        // in reality, it is actually a function that is being called in this library package with "item" as the parameter
                                                     onUnselect(item)
                                                     } } style={{marginRight: 10,marginLeft: 5}}>
                                                 {
