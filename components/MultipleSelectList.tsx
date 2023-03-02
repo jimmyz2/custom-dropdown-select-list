@@ -32,6 +32,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         search = true,
         searchPlaceholder = "search",
         onSelect = () => {},
+        onUnselect = () => {},
         label,
         notFoundText = "No data found",
         disabledItemStyles,
@@ -169,13 +170,26 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                 ?
                     <TouchableOpacity style={[styles.wrapper,boxStyles]} onPress={() => { if(!dropdown){ slidedown() }else{ slideup() } }} >
                         <View>
-                            <Text style={[{fontWeight:'600',fontFamily},labelStyles]}>{ label }</Text>
+                            {/* <Text style={[{fontWeight:'600',fontFamily},labelStyles]}>{ label }</Text> */}
                             <View style={{flexDirection:'row',marginBottom:8,flexWrap:'wrap'}}>
                                 {
                                     selectedval?.map((item,index) => {
                                         return (
-                                            <View key={index} style={[{backgroundColor:'gray',paddingHorizontal:20,paddingVertical:5,borderRadius:50,marginRight:10,marginTop:10}, badgeStyles]}>
-                                                <Text style={[{color:'white',fontSize:12,fontFamily}, badgeTextStyles]}>{item}</Text>
+                                            <View key={index} style={[{backgroundColor:'gray',paddingHorizontal: 5, paddingVertical:5,borderRadius: 4,marginRight:10,marginTop:10, flexDirection: "row", justifyContent: "space-between", alignItems: "center"}, badgeStyles]}>
+                                                <Text style={[{color:'white',fontSize:12,fontFamily, marginLeft: 10}, badgeTextStyles]}>{item}</Text>
+                                                <TouchableOpacity onPress={()=> onUnselect() } style={{marginRight: 10,}}>
+                                                {
+                                                    (!closeicon)
+                                                    ?
+                                                        <Image 
+                                                            source={require('../assets/images/close.png')}
+                                                            resizeMode='contain'
+                                                            style={{width:13,height:13}}
+                                                        />
+                                                    :
+                                                        closeicon
+                                                }
+                                                </TouchableOpacity>
                                             </View>
                                         )
                                     })
@@ -344,8 +358,21 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                                                 {
                                                     selectedval?.map((item,index) => {
                                                         return (
-                                                            <View key={index} style={[{backgroundColor:'gray',paddingHorizontal:20,paddingVertical:5,borderRadius:50,marginRight:10,marginTop:10},badgeStyles]}>
-                                                                <Text style={[{color:'white',fontSize:12,fontFamily},badgeTextStyles]}>{item}</Text>
+                                                            <View key={index} style={[{backgroundColor:'gray',paddingHorizontal: 5, paddingVertical:5,borderRadius: 4,marginRight:10,marginTop:10, flexDirection: "row", justifyContent: "space-between", alignItems: "center"}, badgeStyles]}>
+                                                                <Text style={[{color:'white',fontSize:12,fontFamily, marginLeft: 10},badgeTextStyles]}>{item}</Text>
+                                                                <TouchableOpacity onPress={()=> onUnselect() } style={{marginRight: 10}}>
+                                                                    {
+                                                                        (!closeicon)
+                                                                        ?
+                                                                            <Image 
+                                                                                source={require('../assets/images/close.png')}
+                                                                                resizeMode='contain'
+                                                                                style={{width:13,height:13}}
+                                                                            />
+                                                                        :
+                                                                            closeicon
+                                                                    }
+                                                                </TouchableOpacity>
                                                             </View>
                                                         )
                                                     })
