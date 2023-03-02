@@ -177,7 +177,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                                         return (
                                             <View key={index} style={[{backgroundColor:'gray',paddingHorizontal: 5, paddingVertical:5,borderRadius: 4,marginRight:10,marginTop:10, flexDirection: "row", justifyContent: "space-between", alignItems: "center"}, badgeStyles]}>
                                                 <Text style={[{color:'white',fontSize:12,fontFamily, marginLeft: 10}, badgeTextStyles]}>{item}</Text>
-                                                <TouchableOpacity onPress={()=> onUnselect() } style={{marginRight: 10,}}>
+                                                <TouchableOpacity onPress={()=> onUnselect() } style={{marginRight: 10,marginLeft: 5}}>
                                                 {
                                                     (!closeicon)
                                                     ?
@@ -360,7 +360,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
                                                         return (
                                                             <View key={index} style={[{backgroundColor:'gray',paddingHorizontal: 5, paddingVertical:5,borderRadius: 4,marginRight:10,marginTop:10, flexDirection: "row", justifyContent: "space-between", alignItems: "center"}, badgeStyles]}>
                                                                 <Text style={[{color:'white',fontSize:12,fontFamily, marginLeft: 10},badgeTextStyles]}>{item}</Text>
-                                                                <TouchableOpacity onPress={()=> onUnselect() } style={{marginRight: 10}}>
+                                                                <TouchableOpacity onPress={()=> onUnselect() } style={{marginRight: 10, marginLeft: 5}}>
                                                                     {
                                                                         (!closeicon)
                                                                         ?
