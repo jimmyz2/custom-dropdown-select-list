@@ -197,6 +197,16 @@ export interface MultipleSelectListProps  {
     onUnselect?: (val: string) => void,
 
     /**
+     * Trigger an action when the dropdown is closed.
+     */
+    onCloseDropdown?: () => void,
+
+    /**
+     * Trigger an action when the dropdown is opened.
+     */
+    onOpenDropdown?: () => void,
+    
+    /**
     * set text of label which appears soon after multiple values are selected
     */
     label?: string,

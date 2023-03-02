@@ -43,7 +43,9 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         badgeTextStyles,
         checkBoxStyles,
         save = 'key',
-        dropdownShown = false
+        dropdownShown = false,
+        onCloseDropdown = () => {},
+        onOpenDropdown = () => {},
     }) => {
 
     const oldOption = React.useRef(null)
@@ -57,7 +59,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
 
     const slidedown = () => {
         setDropdown(true)
-        
+        onOpenDropdown()
         Animated.timing(animatedvalue,{
             toValue:height,
             duration:500,
@@ -66,7 +68,7 @@ const MultipleSelectList: React.FC<MultipleSelectListProps> = ({
         }).start()
     }
     const slideup = () => {
-        
+        onCloseDropdown()
         Animated.timing(animatedvalue,{
             toValue:0,
             duration:500,
