@@ -48,10 +48,12 @@ export interface SelectListProps  {
     */
     data: Array<{}>,
 
+    categoryData: Array<{}>,
+
     /**
     * The default option of the select list
     */
-    defaultOption?: { key: any, value: any },
+    defaultChecked?: string[],
 
     /**
     * Pass any JSX to this prop like Text, Image or Icon to show instead of search icon
@@ -76,7 +78,7 @@ export interface SelectListProps  {
     /**
     * Trigger an action when option is selected
     */
-    onSelect?: () => void,
+    onSelect?: (value: string) => void,
 
     /**
     * set fontFamily of whole component Text 
@@ -162,9 +164,14 @@ export interface MultipleSelectListProps  {
     data: Array<{}>,
 
     /**
+    * Data which will be iterated as 'categories' options of select list
+    */
+    categoryData: string[]
+
+    /**
     * The default option of the select list
     */
-    defaultOption?: { key: any, value: any },
+    defaultChecked?: string[],
 
     /**
     * Pass any JSX to this prop like Text, Image or Icon to show instead of search icon
@@ -189,7 +196,7 @@ export interface MultipleSelectListProps  {
     /**
     * Trigger an action when option is selected
     */
-    onSelect?: () => void,
+    onSelect?: (value: string) => void,
 
     /**
      * Trigger an action when an option is unselected BY clicking unselect of the Badge (custom implementation).

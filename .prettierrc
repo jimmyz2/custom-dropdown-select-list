@@ -1,0 +1,9 @@
+{
+    "semi": false,
+    "printWidth": 170,
+    "tabWidth": 2,
+    "useTabs": true,
+    "quoteProps": "preserve",
+    "bracketSameLine": true,
+    "singleQuote": true
+}
